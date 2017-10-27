@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var infoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func toggleInfoView(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            [unowned self] in
+            self.infoView.isHidden = !self.infoView.isHidden
+        }
+    }
+    
 }
 
